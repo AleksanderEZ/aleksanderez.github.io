@@ -7,7 +7,11 @@
   <link href="CIU.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  
+<div class="footer">
+  <h2>Aleksander Borysov - CIU 2021/2022</h2>
+  <h3>aleksander.borysov101@alu.ulpgc.es</h3>
+</div>
+
 <div class="header">
   <h2>Memoria de prácticas de CIU</h2>
 </div>
@@ -16,10 +20,68 @@
     <div class="card">
       <h2>Practica 1: Kong</h2>
       <h5>Kong es un clon de Pong ambientado en la jungla, específicamente con tema simiesco., Feb 14, 2022</h5>
-      <div class="fakeimg" style="height:200px;">
+      <div class="fakeimg" style="height: 640px;">
         <img src="kong.gif" alt="Kong gameplay"  width="800px" />
       </div>
-      <p></p>
+      Fase de diseño:
+      <p>
+        Aposté por un diseño 8-bit. Simplificado, asimilando una mayoría de la estructura inicial de pong. La idea era aportar al usuario una buena experiencia
+        con lo mínimo necesario. En todo momento tenemos un fondo negro. Sobre eso, empezamos a construir. Primero, el menú principal, que consiste en dos imágenes
+        y dos textos. Las imagenes y el primer texto explican qué botones emplear para controlar el jugador de cada lado (bananas). El texto parpadeando incita al
+        usuario a participar, indicando que se debe pulsar una tecla para comenzar. Las teclas elegidas son estándar en la industria de los videojuegos, por lo que
+        usuarios experimentados se adaptarán enseguida. Los usuarios con poca experiencia tendrán que adaptarse, pero las flechas son bastante intuitivas. Quizá WASD
+        de algún dolor de cabeza a alguno, pero no debería llevar más de un minuto en entenderse.
+        
+        Una vez ha comenzado la partida, la pelota saldrá en una dirección aleatoria tras un momento de espera. La puntuación está en el lado superior de la pantalla,
+        que suele ser el primer sitio donde el usuario mira. Los plátanos tienen un control responsive, sin retardo y sin salirse del marco del juego.
+        Los colores son claros y contrastados con el fondo, para diferenciar los elementos dinámicos de los estáticos de la partida. La pelota va acelerándose conforme
+        va rebotando contra los jugadores, para darle una emoción incremental a la partida y evitar aburrir con la monotonía de su velocidad. Esto combina bien con
+        el inicio aleatorio del balón. 
+
+        Con los sonidos y animaciones se priorizó ofrecer feedback al jugador. Intentar ofrecerle una explicación implícita de lo que está ocurriendo. También hay
+        variación en los sonidos, porque la monotonía de un solo efecto puede llegar a cansar los oídos bastante.
+        
+        La pantalla de juego tiene unas dimensiones estandar (800x600). Sería posible encajarla en cualquier pantalla y/o formato. También, al estar en ventana, titulamos
+        la ventana y aportamos un icono identificativo del juego.
+        
+        Consistencia: una misma temática para el juego basada en color e ideas concretas.
+        Usabilidad universal: pantalla versátil y processing está basado en la JVM (Java Virtual Machine).
+        Feedback informativo: sonidos, animaciones y reacciones/movimientos inmediatos.
+        Diálogo: pantalla de inicio informativa.
+        Prevención de errores: antes de finiquitar el proyecto hubo una sesión de pulido, que revisó la satisfacción en la interacción y redujo bugs.
+        Reversibilidad: para reiniciar la partida, basta con reiniciar la aplicación.
+        Usuario en control: los usuarios están en control en todo momento de lo que ocurre en el juego
+        Reducir la carga de la memoria a corto plazo: no hará falta recordar nada más que los controles, todo es intuitivo o está escrito. 
+      </p>
+      Etapas del desarrollo:
+      <P>
+        <ul>
+          <li>Creamos una animación a partir de un gif de un gorila brillando. Nos apoyamos en la clase Animation</li>
+          <li>Renderizamos una pelota, y con la inclusión de movimiento su clase Ball.</li>
+          <li>Como la bola y los cuerpos de los jugadores son similares, creamos una interfaz Figure para que compartan comportamiento.</li>
+          <li>Queremos que la bola comience con un retardo para que de tiempo a los jugadores a situarse, también le aleatorizamos el lanzamiento.</li>
+          <li>Lo siguiente es hacer que los jugadores se muevan, conseguimos esto mediante patrón Command.</li>
+          <li>Nos topamos con el problema de que los jugadores no pueden accionar teclas simultáneamente. 
+            Lo resolvemos con keyPressed() y keyReleased(). Estos metodos activan y desactivan el movimiento hacia arriba/abajo de los jugadores.</li>
+          <li>El juego aún necesita colisiones. Construimos colisiones para los jugadores con la pelota y la pelota con el entorno</li>
+          <li>Segun las colisiones se lanzan eventos: Pelota - pared del fondo puntúa. Pelota - pared inferior/superior rebota. Pelota - jugador rebota</li>
+          <li>Implementamos un menú principal, que explique los controles y lance la partida cuando los jugadores estén listos.</li>
+          <li>Implementamos UI para el juego (linea divisoria de los campos de juego, puntaje)</li>
+          <li>Por último incluimos sonidos</li>
+      </p>
+      Herramientas y referencias:
+      <P>
+        <ul>
+          <li>ezgif, herramienta de manipulación de GIFS. <a href="https://ezgif.com/">https://ezgif.com/</a></li>
+          <li>processing reference. <a href="https://processing.org/reference">https://processing.org/reference</a></li>
+          <li>w3shcools, para el desarrollo de la web. <a href="https://www.w3schools.com/">https://www.w3schools.com/</a></li>
+          <li>8 reglas de schneiderman, para un diseño adecuado de la aplicación <a href="https://www.cs.umd.edu/users/ben/goldenrules.html">https://www.cs.umd.edu/users/ben/goldenrules.html</a></li>
+          <li>Algunos efectos de sonido <a href="https://opengameart.org/content/512-sound-effects-8-bit-style">https://opengameart.org/content/512-sound-effects-8-bit-style</a></li>
+          <li>otsedom.github.io/README.md, idea general para realizar el proyecto <a href="https://github.com/otsedom/otsedom.github.io/blob/main/CIU/P1/README.md">https://github.com/otsedom/otsedom.github.io/blob/main/CIU/P1/README.md</a></li>
+          <li>Gyazo para grabar el gif de esta página <a href="https://gyazo.com/">https://gyazo.com/</a></li>
+          <li>Google imágenes para encontrar iconos e imagenes adecuadas</li>
+          <li>StackOverflow para resolución de errores <a href="https://stackoverflow.com/">https://stackoverflow.com/</a></li>
+      </p>
     </div>
 </div>
 
