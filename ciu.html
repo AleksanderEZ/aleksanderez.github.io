@@ -86,6 +86,72 @@
     </div>
 </div>
 
+<div class="row">
+  <div class="card">
+    <h2>Practica 2: Kong</h2>
+    <h5>Realizamos un visor de sólidos de revolución, generados dibujando el perfil de una figura. Feb 18, 2022</h5>
+    <div class="fakeimg" style="height: 760px;">
+      <img src="revolution.gif" alt="Solid of revolution"  width="1280px" />
+    </div>
+    <h4>Fase de diseño:</h4>
+    <p>
+      Quería una aplicación simple, que no fuese engorrosa o difícil de entender. Entonces, lo más importante es reducir el tiempo que el usuario pasa adecuándose a
+      la aplicación y hacer que quiera y pueda pasar más tiempo haciendo uso de ella. Para esto he intentado limitar el texto a mínimos y comunicar a la aplicación
+      con la persona mediante el canal visual.
+      
+      La pantalla de juego tiene unas dimensiones estándar (1280x720). Sería posible encajarla en cualquier pantalla y/o formato. También, al estar en ventana, titulamos
+      la ventana y aportamos un icono identificativo del juego.
+
+      Construimos el lienzo con un fondo en negro. Lo primero que se encuentra el usuario es una linea divisoria verde. Tiene una UI que le indica dos cosas, la más
+      importante es el texto que indica el botón de ayuda (H). En cuanto el usuario haya leído la ayuda, entenderá de que se trata el otro elemento de la UI. En caso 
+      contrario, tampoco es un elemento muy importante. Ese elemento indica la precisión con la que se dibuja la figura, es decir, cuánto se abre el ángulo cada paso.
+
+      La persona usando la aplicación, tiene que dibujar el perfil de una figura a la derecha del eje verde. Una vez esté dibujada pulsará ENTER para generar el
+      sólido de revolución. Se podrá girar y hacer zoom sobre ella. Subir y bajar el nivel de detalle en directo y pulsar ENTER para volver a dibujar otra.
+      
+      Consistencia: una misma temática para la aplicación basada en color uniforme (negro, verde y blanco).
+      Usabilidad universal: pantalla versátil y processing está basado en la JVM (Java Virtual Machine). El inglés es el idioma más popular en la informática.
+      Feedback informativo: animaciones y reacciones/movimientos inmediatos. UI informativa.
+      Diálogo: el usuario tiene a mano en todo momento y de forma clara la información necesaria.
+      Prevención de errores: se diseña una aplicación modular que permita el testeo de los módulos individuales para que luego en su totalidad funcionen bien.
+      Reversibilidad: pulsar ENTER siempre te devuelve a la fase de dibujado.
+      Usuario en control: los usuarios están en control en todo momento de lo que ocurre en la aplicación.
+      Reducir la carga de la memoria a corto plazo: no hará falta recordar nada más que los controles, todo es intuitivo o está escrito.
+    </p>
+    <h4>Etapas del desarrollo:</h4>
+    <p>
+      <ul>
+        <li>Creamos la pantalla de vista de dibujo. Aquí introducimos el dibujado del eje vertical, de los puntos que marquemos con el ratón, y una línea
+            guía que los une.</li>
+        <li>Ahora queremos una serie de controles que nos permita transicionar entre modos de dibujo y vista de la figura, y más en el futuro, al modo de ayuda.</li>
+        <li>ShapeBuilder: Después, necesitamos que se dibuje algo en el modo de dibujo. Creamos la PShape y una rutina que la construya.
+          Esto es más fácil decirlo que hacerlo, necesitamos tejer una malla de triángulos. Para conseguirlo basta simplemente con unir el vértice 0 de la lista
+        con su rotación siguiente y esta con el vértice 1 de la lista, repitiéndose el proceso anterior.</li>
+        <li>Camera: Usando peasycam, podemos hacer una cámara interactiva. Esto ayudaría al usuario navegar alrededor de la figura. Lo bueno de esta herramienta
+          es que el código se reduce mucho, y en caso de necesitarlo, puedes tomar las riendas del control de la librería.</li>
+        <li>Queda resolver el problema de usabilidad n1. Que el usuario pueda usar la aplicación. Si ponemos una UI, es posible que el usuario se sienta mucho
+          más cómodo con ella. Dibujamos un indicador de la precisión de dibujado, un recordatorio permanente de cómo acceder a la ayuda y la ayuda en sí.</li>
+        <li>En este punto el código estaba un poco desordenado, la cámara se confundía con las transformaciones y el objeto 3D tenía un problema de dibujado.
+          Decidí reescribir el código y separar las responsabilidades en ficheros distintos. También recorte una feature que tenía el código que se volvía un poco
+          inútil y hacía que algunas cosas funcionasen mal. Esta calculaba el alcance que debía tener la cámara dependiendo del tamaño de la pantalla. Pero como
+          esta sería fija, también fijé el alcance de la cámara. 
+        </li>
+      </ul>
+    </p>
+    <h4>Herramientas y referencias:</h4>
+    <p>
+      <ul>
+        <li>ezgif, herramienta de manipulación de GIFS. <a href="https://ezgif.com/">https://ezgif.com/</a></li>
+        <li>processing reference. <a href="https://processing.org/reference">https://processing.org/reference</a></li>
+        <li>w3shcools, para el desarrollo de la web. <a href="https://www.w3schools.com/">https://www.w3schools.com/</a></li>
+        <li>8 reglas de schneiderman, para un diseño adecuado de la aplicación <a href="https://www.cs.umd.edu/users/ben/goldenrules.html">https://www.cs.umd.edu/users/ben/goldenrules.html</a></li>
+        <li>otsedom.github.io/README.md, idea general para realizar el proyecto <a href="https://github.com/otsedom/otsedom.github.io/blob/main/CIU/P2/README.md">https://github.com/otsedom/otsedom.github.io/blob/main/CIU/P1/README.md</a></li>
+        <li>Gyazo para grabar el gif de esta página <a href="https://gyazo.com/">https://gyazo.com/</a></li>
+        <li>StackOverflow para resolución de errores <a href="https://stackoverflow.com/">https://stackoverflow.com/</a></li>
+    </p>
+  </div>
+</div>
+
 <div class="footer">
   <h2>Aleksander Borysov - CIU 2021/2022</h2>
   <h3>aleksander.borysov101@alu.ulpgc.es</h3>
