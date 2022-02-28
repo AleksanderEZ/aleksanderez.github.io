@@ -152,6 +152,57 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="card">
+    <h2>Practica 3: Space</h2>
+    <h5>Realizamos un simulador de un mini-sistema solar. Feb 28, 2022</h5>
+    <div class="fakeimg" style="height: 760px;">
+      <img src="space.gif" alt="Space" width="800px" />
+    </div>
+    <h4>Fase de diseño:</h4>
+    <p>
+      La aplicación es sencilla. Necesitaba un fondo, que es una esfera gigante con una textura espacial. Luego, varias esferas mucho más pequeñas que estuviesen
+      texturizadas e interactuasen entre sí. Habrá musica, luces y movimiento.
+      
+      La pantalla de juego tiene unas dimensiones estándar (800x600). Sería posible encajarla en cualquier pantalla y/o formato. También, al estar en ventana, titulamos
+      la ventana y aportamos un icono identificativo del juego.
+
+      El usuario puede mover la camara y salir de la aplicación.
+      
+      Consistencia: Tema espacial, todos los elementos tratan de respetarlo.
+      Usabilidad universal: Pantalla versátil y processing está basado en la JVM (Java Virtual Machine). El inglés es el idioma más popular en la informática.
+      Feedback informativo: Animaciones y reacciones/movimientos inmediatos. UI informativa.
+      Diálogo: El usuario tiene a mano en todo momento y de forma clara la información necesaria.
+      Prevención de errores: Se diseña una aplicación modular que permita el testeo de los módulos individuales para que luego en su totalidad funcionen bien.
+      Reversibilidad: Faltaría un botón que resetease la cámara, pero como está sobre un eje central (Sol) no es tan grave.
+      Usuario en control: Los usuarios están en control en todo momento de lo que ocurre en la aplicación.
+      Reducir la carga de la memoria a corto plazo: No hará falta recordar nada.
+    </p>
+    <h4>Etapas del desarrollo:</h4>
+    <p>
+      <ul>
+        <li>Creamos una esfera gigante y le ponemos una textura espacial con polar mapping (adaptada a esferas).</li>
+        <li>Como todo ocurrirá dentro de esa esfera, pondremos la camara en el centro.</li>
+        <li>Dibujamos la UI y proporcionamos las acciones que presta. Simplemente texto.</li>
+        <li>Colocamos los planetas y la Luna.</li>
+        <li>Ponemos música.</li>
+        <li>Ponemos luz, prendemos el Sol.</li>
+      </ul>
+    </p>
+    <h4>Herramientas y referencias:</h4>
+    <p>
+      <ul>
+        <li>ezgif, herramienta de manipulación de GIFS. <a href="https://ezgif.com/">https://ezgif.com/</a></li>
+        <li>processing reference. <a href="https://processing.org/reference">https://processing.org/reference</a></li>
+        <li>w3shcools, para el desarrollo de la web. <a href="https://www.w3schools.com/">https://www.w3schools.com/</a></li>
+        <li>8 reglas de schneiderman, para un diseño adecuado de la aplicación <a href="https://www.cs.umd.edu/users/ben/goldenrules.html">https://www.cs.umd.edu/users/ben/goldenrules.html</a></li>
+        <li>otsedom.github.io/README.md, idea general para realizar el proyecto <a href="https://github.com/otsedom/otsedom.github.io/blob/main/CIU/P3/README.md">https://github.com/otsedom/otsedom.github.io/blob/main/CIU/P3/README.md</a></li>
+        <li>Gyazo para grabar el gif de esta página <a href="https://gyazo.com/">https://gyazo.com/</a></li>
+        <li>StackOverflow para resolución de errores <a href="https://stackoverflow.com/">https://stackoverflow.com/</a></li>
+    </p>
+  </div>
+</div>
+
 <div class="footer">
   <h2>Aleksander Borysov - CIU 2021/2022</h2>
   <h3>aleksander.borysov101@alu.ulpgc.es</h3>
