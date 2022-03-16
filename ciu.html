@@ -248,6 +248,61 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="card">
+    <h2>Práctica 5: Visualización de datos syticleta</h2>
+    <h5>Realizamos una presentación de los datos del servicio de transporte público de Las Palmas de Gran Canaria, Syticleta. Mar 16, 2022</h5>
+    <div class="fakeimg" style="height: 1650px;">
+      <img src="syticleta.gif" alt="Space" width="1164px" />
+    </div>
+    <h4>Fase de diseño:</h4>
+    <p>
+      La idea inicial era colocar puntos con interactividad sobre un mapa de Las Palmas, cada uno correspondiente a estaciones de la Syticleta. A eso se le añadió
+      el trazado de rutas y tamaño dinámico.
+
+      NOTA: Hay algunos nodos que no presentan datos. Principalmente es porque los datos que presenta sagulpa no son consistentes, les falta realineación con el nombre real
+      de algunas estaciones.
+
+      Consistencia: Selección de colores que no se confundan entre ellos. Es una temática de mapa y se puede discernir cada elemento de la pantalla.
+      Usabilidad universal: Pantalla versátil y processing está basado en la JVM (Java Virtual Machine). El inglés es el idioma más popular en la informática.
+      Feedback informativo: Animaciones y reacciones/movimientos inmediatos. UI informativa.
+      Diálogo: El usuario tiene a mano en todo momento y de forma clara la información necesaria.
+      Prevención de errores: Se diseña una aplicación modular que permita el testeo de los módulos individuales para que luego en su totalidad funcionen bien.
+      Reversibilidad: Con la R el usuario vuelve a la posición inicial.
+      Usuario en control: Los usuarios están en control en todo momento de lo que ocurre en la aplicación.
+      Reducir la carga de la memoria a corto plazo: No hará falta recordar nada.
+    </p>
+    <h4>Etapas del desarrollo:</h4>
+    <p>
+      <ul>
+        <li>Primero creé la clase que haría objetos de círculos que crecen cuando pasas el ratón por encima. Son customizables en color, tamaño, de cuánto a cuánto crecen...
+          Después, la clase mapa. Alberga una imagen y un cerco de coordenadas cartográficas. Además, se le proporciona la capacidad de hacer zoom y moverse.
+          Ahora es momento de renderizar el mapa y colocar los puntos sobre él. Tenemos que leer los datos de geolocalización que están en el fichero pertinente.
+          Cada línea es una estación, y cada estación es un punto. Extraeremos el nombre y localización. Más adelante, también averiguaremos cuántas rutas salen de esa estación,
+          eso determinará el tamaño inicial de cada círculo. Mientras, también almacenamos en cada círculo ocurrencias de otros círculos, para contar cuántos viajes salen hacia
+          allí.
+          Pintamos los círculos con los parámetros obtenidos y un color aleatorio de una gama establecida de colores fríos. Tenemos otra gama de colores calientes para las
+          líneas que representarán las rutas.
+          Ahora, cuando una persona pase el ratón sobre un círculo crecerá y mostrará su nombre, acompañado de lineas que lo unen con los destinos desde esa estación. Cuanto
+          más oscuro sea el color de la línea, más asiduamente se toma esa ruta.
+          Queda pintar un HUD que informe al usuario de lo que tiene que hacer, porque sin el HUD podría perderse. Por último y como detalle, añadimos un ciclo de día y
+          noche para experimentar con la iluminación.
+        </li>
+      </ul>
+    </p>
+    <h4>Herramientas y referencias:</h4>
+    <p>
+      <ul>
+        <li>Peek para grabar el GIF. <a href="https://github.com/phw/peek">https://github.com/phw/peek</a></li>
+        <li>processing reference. <a href="https://processing.org/reference">https://processing.org/reference</a></li>
+        <li>w3shcools, para el desarrollo de la web. <a href="https://www.w3schools.com/">https://www.w3schools.com/</a></li>
+        <li>8 reglas de schneiderman, para un diseño adecuado de la aplicación <a href="https://www.cs.umd.edu/users/ben/goldenrules.html">https://www.cs.umd.edu/users/ben/goldenrules.html</a></li>
+        <li>otsedom.github.io/README.md, idea general para realizar el proyecto <a href="https://github.com/otsedom/otsedom.github.io/blob/main/CIU/P5/README.md">https://github.com/otsedom/otsedom.github.io/blob/main/CIU/P5/README.md</a></li>
+        <li>StackOverflow para resolución de errores <a href="https://stackoverflow.com/">https://stackoverflow.com/</a></li>
+    </p>
+  </div>
+</div>
+
 <div class="footer">
   <h2>Aleksander Borysov - CIU 2021/2022</h2>
   <h3>aleksander.borysov101@alu.ulpgc.es</h3>
