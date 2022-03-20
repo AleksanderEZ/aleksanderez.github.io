@@ -253,7 +253,7 @@
     <h2>Práctica 5: Visualización de datos syticleta</h2>
     <h5>Realizamos una presentación de los datos del servicio de transporte público de Las Palmas de Gran Canaria, Syticleta. Mar 16, 2022</h5>
     <div class="fakeimg" style="height: 1650px;">
-      <img src="syticleta.gif" alt="Space" width="1164px" />
+      <img src="syticleta.gif" alt="Sitycleta" width="1164px" />
     </div>
     <h4>Fase de diseño:</h4>
     <p>
@@ -298,6 +298,52 @@
         <li>w3shcools, para el desarrollo de la web. <a href="https://www.w3schools.com/">https://www.w3schools.com/</a></li>
         <li>8 reglas de schneiderman, para un diseño adecuado de la aplicación <a href="https://www.cs.umd.edu/users/ben/goldenrules.html">https://www.cs.umd.edu/users/ben/goldenrules.html</a></li>
         <li>otsedom.github.io/README.md, idea general para realizar el proyecto <a href="https://github.com/otsedom/otsedom.github.io/blob/main/CIU/P5/README.md">https://github.com/otsedom/otsedom.github.io/blob/main/CIU/P5/README.md</a></li>
+        <li>StackOverflow para resolución de errores <a href="https://stackoverflow.com/">https://stackoverflow.com/</a></li>
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="card">
+    <h2>Práctica 6: Cámara y OpenCV</h2>
+    <h5>Jugamos con la librería de vídeo y OpenCV de Processing. Mar 16, 2022</h5>
+    <div class="fakeimg" style="height: 640px;">
+      <img src="camera.gif" alt="Camera" width="800px" />
+    </div>
+    <h4>Fase de diseño:</h4>
+    <p>
+      Construiremos una aplicación que utilice la webcam del usuario. Se podrán usar varios modos, entre ellos: Brillo, umbralizado, filtro de cara feliz, negativo...
+      El modo cambia cuando damos click y algunos presentan interactividad, en tanto que mover el ratón de lado a lado cambiará el aspecto de la cámara.
+
+      Consistencia: Selección de colores que no se confundan entre ellos. Es una temática de mapa y se puede discernir cada elemento de la pantalla.
+      Usabilidad universal: Pantalla versátil y processing está basado en la JVM (Java Virtual Machine). El inglés es el idioma más popular en la informática.
+      Feedback informativo: Animaciones y reacciones/movimientos inmediatos. UI informativa.
+      Diálogo: El usuario tiene a mano en todo momento y de forma clara la información necesaria.
+      Prevención de errores: Se diseña una aplicación modular que permita el testeo de los módulos individuales para que luego en su totalidad funcionen bien.
+      Reversibilidad: Todos los modos, en todo momento son alcanzables haciendo clic.
+      Usuario en control: Los usuarios están en control en todo momento de lo que ocurre en la aplicación.
+      Reducir la carga de la memoria a corto plazo: No hará falta recordar nada.
+    </p>
+    <h4>Etapas del desarrollo:</h4>
+    <p>
+      <ul>
+        <li>
+          Primero hay que asegurarse de que la cámara funciona bien sin modificaciones. Creamos un esqueleto de aplicación que configura la cámara y cada iteración del bucle
+          draw() extraiga un fotograma de la cámara y lo muestre.
+          Después, en lugar de mostrar el fotograma de la cámara, mostraremos el fotograma que tiene cargado OpenCV. Previemente, habremos de haberselo proporcionado.
+          Cuando OpenCV tiene cargada una imagen, podemos hacer modificaciones directamente sobre ella. Así construimos muchos de los filros.
+          Creamos varios modos con los elementos que nos ofrece OpenCV y los hacemos rotar con el clic del ratón.
+        </li>
+      </ul>
+    </p>
+    <h4>Herramientas y referencias:</h4>
+    <p>
+      <ul>
+        <li>Peek para grabar el GIF. <a href="https://github.com/phw/peek">https://github.com/phw/peek</a></li>
+        <li>processing reference. <a href="https://processing.org/reference">https://processing.org/reference</a></li>
+        <li>w3shcools, para el desarrollo de la web. <a href="https://www.w3schools.com/">https://www.w3schools.com/</a></li>
+        <li>8 reglas de schneiderman, para un diseño adecuado de la aplicación <a href="https://www.cs.umd.edu/users/ben/goldenrules.html">https://www.cs.umd.edu/users/ben/goldenrules.html</a></li>
+        <li>otsedom.github.io/README.md, idea general para realizar el proyecto <a href="https://github.com/otsedom/otsedom.github.io/blob/main/CIU/P6/README.md">https://github.com/otsedom/otsedom.github.io/blob/main/CIU/P6/README.md</a></li>
         <li>StackOverflow para resolución de errores <a href="https://stackoverflow.com/">https://stackoverflow.com/</a></li>
     </p>
   </div>
