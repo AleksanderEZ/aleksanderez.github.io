@@ -409,6 +409,45 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="card">
+    <h2>Práctica 10-11: Shaders</h2>
+    <h5>Usamos glsl para crear una animación de ciclo día-noche sobre la hierba. May 3, 2022</h5>
+    <div class="fakeimg" style="height: 640px;">
+      <img src="sun&moon.gif" alt="Sun and moon" width="800px" />
+    </div>
+    <h4>Fase de diseño:</h4>
+    <p>
+      El shader mostrara una hierba con un cielo. En este cielo, se sucederá el día y la noche con su respecitvo sol y luna.
+      <ul>
+        <li>Es más un video que una aplicación, no aplicaría las reglas de schneiderman.</li>
+      </ul>
+    </p>
+    <h4>Etapas del desarrollo:</h4>
+    <p>
+      <ul>
+          <li>Creamos la hierba con una función de modulo.</li>
+          <li>El cielo es una transición de azul a blanco o de azul a negro, respectivamente.</li>
+          <li>El sol y la luna se crean de la misma manera (4 rectangulos).</li>
+          <li>Se calcula la translación con el seno y coseno (giran en círculo)</li>
+          <li>Hay un desfase de PI, entre el sol y la luna, por lo que en todo momento estarán en el lado contrario al otro.</li>
+      </ul>
+    </p>
+    <h4>Herramientas y referencias:</h4>
+    <p>
+      <ul>
+        <li>ezgif, herramienta de manipulación de GIFS. <a href="https://ezgif.com/">https://ezgif.com/</a></li>
+        <li>processing reference. <a href="https://processing.org/reference">https://processing.org/reference</a></li>
+        <li>w3shcools, para el desarrollo de la web. <a href="https://www.w3schools.com/">https://www.w3schools.com/</a></li>
+        <li>otsedom.github.io/README.md, idea general para realizar el proyecto <a href="https://github.com/otsedom/otsedom.github.io/blob/main/CIU/P7/README.md">https://github.com/otsedom/otsedom.github.io/blob/main/CIU/P7/README.md</a></li>
+        <li>Gyazo para grabar el gif de esta página <a href="https://gyazo.com/">https://gyazo.com/</a></li>
+        <li>StackOverflow para resolución de errores <a href="https://stackoverflow.com/">https://stackoverflow.com/</a></li>
+        <li>The book of shaders <a href="https://thebookofshaders.com/">https://thebookofshaders.com/</a></li>
+      </ul>
+    </p>
+  </div>
+</div>
+
 <div class="footer">
   <h2>Aleksander Borysov - CIU 2021/2022</h2>
   <h3>aleksander.borysov101@alu.ulpgc.es</h3>
